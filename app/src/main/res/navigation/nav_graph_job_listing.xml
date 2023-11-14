@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_job_listing"
+    app:startDestination="@id/jobListFragment">
+
+    <fragment
+        android:id="@+id/addJobListingFragment"
+        android:name="com.example.hiremequick002.jobListing.jobFragments.AddJobListingFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_job_listing" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="job_listing_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addJobListingFragment_to_jobListFragment"
+            app:destination="@id/jobListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobListFragment"
+        android:name="com.example.hiremequick002.jobListing.jobFragments.JobListFragment"
+        android:label="fragment_job_list"
+        tools:layout="@layout/fragment_job_list" >
+        <action
+            android:id="@+id/action_jobListFragment_to_addJobListingFragment"
+            app:destination="@id/addJobListingFragment" />
+        <action
+            android:id="@+id/action_jobListFragment_to_jobListingDetailsFragment"
+            app:destination="@id/jobListingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobListingDetailsFragment"
+        android:name="com.example.hiremequick002.jobListing.jobFragments.JobListingDetailsFragment"
+        android:label="fragment_job_listing_details"
+        tools:layout="@layout/fragment_job_listing_details" >
+        <action
+            android:id="@+id/action_jobListingDetailsFragment_to_addJobListingFragment"
+            app:destination="@id/addJobListingFragment" />
+        <argument
+            android:name="job_listing_id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
