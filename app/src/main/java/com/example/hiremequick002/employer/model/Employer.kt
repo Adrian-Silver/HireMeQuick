@@ -8,4 +8,12 @@ data class Employer(
     val userFirstName: String,
     val userLastName: String,
     val userCompanyName: String
+
+//    val employerId: String,
+//    val employerEmail: String,
+//    val employerRole: String,
+//    val employerName: String,
+//    val employerFirstName: String,
+//    val employerLastName: String,
+//    val employerCompanyName: String,
 )
